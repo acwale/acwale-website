@@ -61,20 +61,30 @@ border-radius:5px;
 
 <script>
 function sendWhatsApp(){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
 var name=document.getElementById("name").value;
 var mobile=document.getElementById("mobile").value;
 var address=document.getElementById("address").value;
 var service=document.getElementById("service").value;
+
+var lat=position.coords.latitude;
+var lng=position.coords.longitude;
 
 var msg =
 "AC Booking Request%0A%0A"+
 "Name: "+name+"%0A"+
 "Mobile: "+mobile+"%0A"+
 "Address: "+address+"%0A"+
-  "Service: "+service;
+"Service: "+service+"%0A"+
+"Location: https://maps.google.com/?q="+lat+","+lng;
 
-msg += "%0A📍 Location: " + customerLocation;
+window.open("https://wa.me/918766348410?text="+msg);
 
+});
+
+}
 window.open("https://wa.me/918766348410?text="+msg);
 }
 </script>
