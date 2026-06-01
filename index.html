@@ -153,9 +153,17 @@ text-decoration:none;
 font-weight:bold;">
 WhatsApp
 </a>
+<script>
 
-  <script>
-var customerLocation = "";
+document.getElementById("payment").addEventListener("change", function(){
+if(this.value=="UPI"){
+document.getElementById("upiBox").style.display="block";
+}else{
+document.getElementById("upiBox").style.display="none";
+}
+});
+
+var customerLocation="";
 
 function getLocation() {
 if (navigator.geolocation) {
@@ -172,6 +180,10 @@ document.getElementById("location").innerHTML =
 });
 }
 }
+
+getLocation();
+
 </script>
+  
 </body>
 </html>
