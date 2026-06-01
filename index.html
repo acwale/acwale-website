@@ -124,15 +124,76 @@ window.open("https://wa.me/918766348410?text="+msg);
 <option>AC Installation</option>
 <option>Gas Charging</option>
 </select>
+
 <select id="payment">
 <option value="Cash">Cash on Service</option>
 <option value="UPI">Online UPI Payment</option>
 </select>
 
-<div id="upiBox" style="display:none;">
+<div id="upiBox" style="display:none; margin-top:15px;">
+
+<img src="qr.jpg" width="250" style="border-radius:10px;">
+
 <p><b>UPI ID:</b> mohdali830@ybl</p>
+
 <p>Online payment karke screenshot service engineer ko dikhaye.</p>
+
 </div>
+
+<br><br>
+
+<p id="location"></p>
+
+<br><br>
+
+<button onclick="sendWhatsApp()">Book on WhatsApp</button>
+
+<br><br>
+
+<a class="call-btn" href="tel:8766348410">Call Now</a>
+
+<script>
+document.getElementById("payment").addEventListener("change", function(){
+
+if(this.value=="UPI"){
+document.getElementById("upiBox").style.display="block";
+}else{
+document.getElementById("upiBox").style.display="none";
+}
+
+});
+</script>
+
+
+
+
+
+
+
+  
+
+  id="location"></p>
+
+<br><br>
+
+<button onclick="sendWhatsApp()">Book on WhatsApp</button>
+
+<br><br>
+
+<a class="call-btn" href="tel:8766348410">Call Now</a>
+
+<script>
+document.getElementById("payment").addEventListener("change", function(){
+
+if(this.value=="UPI"){
+document.getElementById("upiBox").style.display="block";
+}else{
+document.getElementById("upiBox").style.display="none";
+}
+
+});
+</script>
+  
 <br><br>
 <p id="location"></p>
 
@@ -183,7 +244,18 @@ document.getElementById("location").innerHTML =
 
 getLocation();
 
+<script>
+document.getElementById("payment").addEventListener("change", function(){
+
+if(this.value=="UPI"){
+document.getElementById("upiBox").style.display="block";
+}else{
+document.getElementById("upiBox").style.display="none";
+}
+
+});
 </script>
+
   
 </body>
 </html>
