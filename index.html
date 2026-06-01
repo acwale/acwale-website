@@ -71,7 +71,9 @@ var msg =
 "Name: "+name+"%0A"+
 "Mobile: "+mobile+"%0A"+
 "Address: "+address+"%0A"+
-"Service: "+service;
+  "Service: "+service;
+
+msg += "%0A📍 Location: " + customerLocation;
 
 window.open("https://wa.me/918766348410?text="+msg);
 }
@@ -116,7 +118,13 @@ window.open("https://wa.me/918766348410?text="+msg);
 </select>
 
 <br><br>
+<button onclick="getLocation()">
+📍 Share My Location
+</button>
 
+<p id="location"></p>
+
+<br><br>
 <button onclick="sendWhatsApp()">Book on WhatsApp</button>
 
 <br><br>
@@ -133,5 +141,25 @@ text-decoration:none;
 font-weight:bold;">
 WhatsApp
 </a>
+
+  <script>
+var customerLocation = "";
+
+function getLocation() {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(function(position) {
+
+customerLocation =
+"https://maps.google.com/?q=" +
+position.coords.latitude + "," +
+position.coords.longitude;
+
+document.getElementById("location").innerHTML =
+"Location Captured ✅";
+
+});
+}
+}
+</script>
 </body>
 </html>
