@@ -1,31 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AC Service Booking</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AC Wale</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+margin:0;
+padding:0;
+text-align:center;
+}
+
+.header{
+background:#0077ff;
+color:white;
+padding:20px;
+}
+
+.form-box{
+background:white;
+width:90%;
+max-width:400px;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:95%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:12px 20px;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.call-btn{
+display:inline-block;
+background:#0077ff;
+color:white;
+padding:12px 20px;
+margin-top:10px;
+text-decoration:none;
+border-radius:5px;
+}
+</style>
+
+<script>
+function sendWhatsApp(){
+var name=document.getElementById("name").value;
+var mobile=document.getElementById("mobile").value;
+var address=document.getElementById("address").value;
+var service=document.getElementById("service").value;
+
+var msg =
+"AC Booking Request%0A%0A"+
+"Name: "+name+"%0A"+
+"Mobile: "+mobile+"%0A"+
+"Address: "+address+"%0A"+
+"Service: "+service;
+
+window.open("https://wa.me/918766348410?text="+msg);
+}
+</script>
+
 </head>
-<body style="font-family:Arial;text-align:center;padding:20px;">
 
-<h1>AC Service Booking Form</h1>
+<body>
 
-<form>
-<input type="text" placeholder="Customer Name"><br><br>
+<div class="header">
+<h1>AC Wale</h1>
+<p>AC Service | Repair | Installation</p>
+</div>
 
-<input type="tel" placeholder="Mobile Number"><br><br>
+<div class="form-box">
 
-<input type="tel" placeholder="WhatsApp Number"><br><br>
+<h2>Book AC Service</h2>
 
-<input type="text" placeholder="Address"><br><br>
+<input type="text" id="name" placeholder="Customer Name">
 
-<select>
+<input type="tel" id="mobile" placeholder="Mobile Number">
+
+<input type="text" id="address" placeholder="Address">
+
+<select id="service">
 <option>AC Service</option>
-<option>AC Installation</option>
 <option>AC Repair</option>
+<option>AC Installation</option>
 <option>Gas Charging</option>
-</select><br><br>
+</select>
 
-<button type="submit">Book Now</button>
-</form>
+<br><br>
+
+<button onclick="sendWhatsApp()">Book on WhatsApp</button>
+
+<br><br>
+
+<a class="call-btn" href="tel:8766348410">Call Now</a>
+
+</div>
 
 </body>
 </html>
